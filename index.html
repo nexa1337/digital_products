@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXA1337 - Digital Marketplace | Premium E-Books, Templates & AI Tools</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="NEXA1337 is your ultimate digital marketplace for premium e-books, templates, themes, scripts, and AI tools. Discover high-quality digital products to grow your business.">
+    <meta name="keywords" content="digital marketplace, e-books, templates, themes, scripts, AI tools, digital products, online store">
+    <meta name="author" content="NEXA1337">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta property="og:title" content="NEXA1337 - Digital Marketplace">
+    <meta property="og:description" content="Discover premium digital products including e-books, templates, themes, scripts, and AI tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexa1337.com">
+    <meta property="og:image" content="https://nexa1337.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NEXA1337 - Digital Marketplace">
+    <meta name="twitter:description" content="Premium digital products for your business growth">
+    <meta name="twitter:image" content="https://nexa1337.com/twitter-image.png">
+    <meta name="theme-color" content="#6a79fa">
+    <link rel="canonical" href="https://nexa1337.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Bar with Date, Time, and Visitor Counter -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span id="current-date"></span>
+                <span class="separator">•</span>
+                <span id="current-time"></span>
+            </div>
+            <div class="top-bar-right">
+                <div class="visitor-indicator">
+                    <span class="visitor-dot" id="visitor-dot"></span>
+                    <span aria-live="polite" aria-atomic="true" id="visitor-text">👥 <span id="visitor-count">132</span> Online</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Modal (First Load) -->
+    <div id="popup-modal" class="popup-modal hidden">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Close popup">&times;</button>
+            
+            <div class="popup-icon-cluster">
+                <span class="popup-icon">📚</span>
+                <span class="popup-icon">🎨</span>
+                <span class="popup-icon">🤖</span>
+            </div>
+            
+            <h2>Explore Our Platforms</h2>
+            <p class="popup-subtitle">Discover our digital solutions and resources across multiple platforms.</p>
+            <p class="popup-tagline">Get more traffic and grow your business today.</p>
+            
+            <div class="popup-links">
+                <a href="#blog" class="popup-link popup-cta">Visit Our Blog</a>
+                <a href="#ebooks" class="popup-link popup-cta">Buy Our Books</a>
+                <a href="#" class="popup-link popup-cta">Our MindMap</a>
+                <a href="#" class="popup-link popup-cta">Our Services</a>
+                <a href="#" class="popup-link popup-cta">Get Digital Website</a>
+            </div>
+            
+            <p class="popup-trust">Join 500+ businesses already growing with <strong>N E X A 1337</strong></p>
+            
+            <label class="popup-checkbox">
+                <input type="checkbox" id="popup-dont-show" aria-label="Don't show this popup again">
+                <span>Don't show this again</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-nexa">NEXA</span><span class="logo-number">1337</span>
+            </div>
+            
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#ebooks" class="nav-link">E-Books</a>
+                <a href="#templates" class="nav-link">Templates</a>
+                <a href="#themes" class="nav-link">Themes</a>
+                <a href="#scripts" class="nav-link">Scripts</a>
+                <a href="#tools" class="nav-link">AI Tools</a>
+            </div>
+            
+            <div class="navbar-right">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="snow-container" id="snow-container"></div>
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Welcome to NEXA1337</h1>
+            <p>Your Ultimate Digital Marketplace for Premium Products</p>
+            
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-bar" 
+                    placeholder="Search products..."
+                >
+                <button class="search-btn" aria-label="Search">
+                    <i class="fas fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Icons -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">📚</div>
+                <h3>Premium E-Books</h3>
+                <p>Learn from industry experts</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎨</div>
+                <h3>Beautiful Templates</h3>
+                <p>Ready-to-use designs</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌈</div>
+                <h3>Modern Themes</h3>
+                <p>Stunning visual designs</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚙️</div>
+                <h3>Powerful Scripts</h3>
+                <p>Automate your workflow</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Tools</h3>
+                <p>Next-gen solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Sections -->
+    <section class="products-section" id="ebooks">
+        <div class="section-header">
+            <h2>E-Books</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="popular">Popular</button>
+                <button class="tab-btn" data-filter="new">New</button>
+                <button class="tab-btn" data-filter="trending">Trending</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="ebooks-grid"></div>
+        <div class="pagination" id="ebooks-pagination"></div>
+    </section>
+
+    <section class="products-section" id="templates">
+        <div class="section-header">
+            <h2>Templates</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="popular">Popular</button>
+                <button class="tab-btn" data-filter="new">New</button>
+                <button class="tab-btn" data-filter="trending">Trending</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="templates-grid"></div>
+        <div class="pagination" id="templates-pagination"></div>
+    </section>
+
+    <section class="products-section" id="themes">
+        <div class="section-header">
+            <h2>Themes</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="popular">Popular</button>
+                <button class="tab-btn" data-filter="new">New</button>
+                <button class="tab-btn" data-filter="trending">Trending</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="themes-grid"></div>
+        <div class="pagination" id="themes-pagination"></div>
+    </section>
+
+    <section class="products-section" id="scripts">
+        <div class="section-header">
+            <h2>Scripts</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="popular">Popular</button>
+                <button class="tab-btn" data-filter="new">New</button>
+                <button class="tab-btn" data-filter="trending">Trending</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="scripts-grid"></div>
+        <div class="pagination" id="scripts-pagination"></div>
+    </section>
+
+    <section class="products-section" id="tools">
+        <div class="section-header">
+            <h2>AI Tools</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="popular">Popular</button>
+                <button class="tab-btn" data-filter="new">New</button>
+                <button class="tab-btn" data-filter="trending">Trending</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="tools-grid"></div>
+        <div class="pagination" id="tools-pagination"></div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="quick-view-modal">
+        <div class="quick-view-overlay"></div>
+        <div class="quick-view-content">
+            <button class="quick-view-close">&times;</button>
+            <div class="quick-view-body">
+                <div class="quick-view-image">
+                    <img id="qv-image" src="/placeholder.svg" alt="Product">
+                </div>
+                <div class="quick-view-details">
+                    <h3 id="qv-title"></h3>
+                    <p class="qv-author" id="qv-author"></p>
+                    <p class="qv-description" id="qv-description"></p>
+                    <div class="qv-tags" id="qv-tags"></div>
+                    <div class="qv-price-section">
+                        <span class="qv-price" id="qv-price"></span>
+                        <a href="#" class="qv-buy-btn" id="qv-buy-btn" target="_blank">Buy on Gumroad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" title="Scroll to top">
+        ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>N E X A <span style="color:#6a79fa;">1337</span></h4>
+                    <p>Empowering digital growth through creativity, technology, and smart strategy.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Download App</h4>
+                    <div class="app-download-links">
+                        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" class="app-store-link" aria-label="Download on Google Play">
+                            <i class="fab fa-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+                        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="app-store-link" aria-label="Download on App Store">
+                            <i class="fab fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 NEXA1337 – All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/nexa1337" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com/nexa1337" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@nexa.1337" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=212723242286" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
