@@ -1,106 +1,27 @@
+
 // Product Data
 const productsData = {
-  ebooks: [
-    {
-      id: 1,
-      title: "Web Development Mastery",
-      author: "John Smith",
-      price: "$29.99",
-      image: "/web-development-book.jpg",
-      tags: ["Popular", "New"],
-      description: "Complete guide to modern web development with HTML, CSS, and JavaScript.",
-    },
-    {
-      id: 2,
-      title: "JavaScript Advanced",
-      author: "Sarah Johnson",
-      price: "$24.99",
-      image: "/javascript-book.jpg",
-      tags: ["Trending"],
-      description: "Master advanced JavaScript concepts and patterns.",
-    },
-    {
-      id: 3,
-      title: "React Complete Guide",
-      author: "Mike Davis",
-      price: "$34.99",
-      image: "/react-book.jpg",
-      tags: ["Popular"],
-      description: "Learn React from basics to advanced level.",
-    },
-    {
-      id: 4,
-      title: "CSS Mastery",
-      author: "Emma Wilson",
-      price: "$19.99",
-      image: "/css-book.jpg",
-      tags: ["New"],
-      description: "Advanced CSS techniques and best practices.",
-    },
-    {
-      id: 5,
-      title: "Node.js Backend",
-      author: "Alex Brown",
-      price: "$27.99",
-      image: "/nodejs-book.jpg",
-      tags: ["Trending"],
-      description: "Build scalable backend applications with Node.js.",
-    },
-    {
-      id: 6,
-      title: "TypeScript Guide",
-      author: "Lisa Anderson",
-      price: "$22.99",
-      image: "/typescript-book.jpg",
-      tags: ["Popular"],
-      description: "Complete TypeScript guide for developers.",
-    },
-    {
-      id: 7,
-      title: "Database Design",
-      author: "Tom Harris",
-      price: "$31.99",
-      image: "/database-book.jpg",
-      tags: ["New"],
-      description: "Master database design and optimization.",
-    },
-    {
-      id: 8,
-      title: "API Development",
-      author: "Rachel Green",
-      price: "$26.99",
-      image: "/api-book.jpg",
-      tags: ["Trending"],
-      description: "Build robust REST and GraphQL APIs.",
-    },
-    {
-      id: 9,
-      title: "Performance Optimization",
-      author: "Chris Martin",
-      price: "$28.99",
-      image: "/performance-book.jpg",
-      tags: ["Popular"],
-      description: "Optimize web application performance.",
-    },
-    {
-      id: 10,
-      title: "Testing Best Practices",
-      author: "Diana Lee",
-      price: "$23.99",
-      image: "/testing-book.jpg",
-      tags: ["New"],
-      description: "Comprehensive guide to testing strategies.",
-    },
-  ],
-  templates: [
+  "templates-tools": [
     {
       id: 1,
       title: "SaaS Landing Page",
       author: "Design Studio",
       price: "$49.99",
       image: "/saas-template.jpg",
+      images: [
+        "/saas-template.jpg",
+        "/saas-template-2.jpg",
+        "/saas-template-3.jpg"
+      ],
       tags: ["Popular"],
       description: "Modern SaaS landing page template.",
+      features: [
+        "Fully responsive design",
+        "SEO optimized",
+        "Easy customization",
+        "Cross-browser compatibility"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
     },
     {
       id: 2,
@@ -108,8 +29,20 @@ const productsData = {
       author: "Web Creators",
       price: "$59.99",
       image: "/ecommerce-template.jpg",
+      images: [
+        "/ecommerce-template.jpg",
+        "/ecommerce-template-2.jpg",
+        "/ecommerce-template-3.jpg"
+      ],
       tags: ["Trending"],
       description: "Complete e-commerce store template.",
+      features: [
+        "Shopping cart integration",
+        "Payment gateway support",
+        "Product management system",
+        "Customer dashboard"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
     },
     {
       id: 3,
@@ -117,295 +50,198 @@ const productsData = {
       author: "Creative Team",
       price: "$39.99",
       image: "/portfolio-template.jpg",
+      images: [
+        "/portfolio-template.jpg",
+        "/portfolio-template-2.jpg",
+        "/portfolio-template-3.jpg"
+      ],
       tags: ["New"],
       description: "Professional portfolio template.",
-    },
-    {
-      id: 4,
-      title: "Blog Platform",
-      author: "Content Hub",
-      price: "$44.99",
-      image: "/modern-blog-template.png",
-      tags: ["Popular"],
-      description: "Feature-rich blog platform template.",
-    },
-    {
-      id: 5,
-      title: "Agency Website",
-      author: "Agency Pro",
-      price: "$54.99",
-      image: "/agency-template.jpg",
-      tags: ["Trending"],
-      description: "Professional agency website template.",
-    },
-    {
-      id: 6,
-      title: "Startup Kit",
-      author: "Startup Hub",
-      price: "$69.99",
-      image: "/startup-template.jpg",
-      tags: ["New"],
-      description: "Complete startup website kit.",
-    },
-    {
-      id: 7,
-      title: "Restaurant Site",
-      author: "Food Design",
-      price: "$34.99",
-      image: "/restaurant-template.jpg",
-      tags: ["Popular"],
-      description: "Restaurant website template.",
-    },
-    {
-      id: 8,
-      title: "Fitness App",
-      author: "Fitness Tech",
-      price: "$44.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "Fitness app landing page template.",
-    },
-    {
-      id: 9,
-      title: "Real Estate Portal",
-      author: "Property Pro",
-      price: "$54.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["New"],
-      description: "Real estate listing portal template.",
-    },
-    {
-      id: 10,
-      title: "Education Platform",
-      author: "EduTech",
-      price: "$64.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "Online learning platform template.",
-    },
+      features: [
+        "Project showcase gallery",
+        "Contact form integration",
+        "Social media links",
+        "Print-friendly layout"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
+    }
   ],
-  themes: [
+  "digital-design-assets": [
     {
       id: 1,
-      title: "Dark Minimal",
-      author: "Theme Studio",
-      price: "$19.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "Minimalist dark theme for modern apps.",
-    },
-    {
-      id: 2,
-      title: "Neon Glow",
-      author: "Design Lab",
-      price: "$24.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "Vibrant neon glow theme.",
-    },
-    {
-      id: 3,
-      title: "Soft Pastel",
-      author: "Color Studio",
-      price: "$17.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["New"],
-      description: "Soft pastel color theme.",
-    },
-    {
-      id: 4,
-      title: "Corporate Blue",
-      author: "Business Design",
-      price: "$21.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "Professional corporate blue theme.",
-    },
-    {
-      id: 5,
-      title: "Nature Green",
-      author: "Eco Design",
-      price: "$18.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "Nature-inspired green theme.",
-    },
-    {
-      id: 6,
-      title: "Sunset Orange",
-      author: "Creative Hub",
-      price: "$19.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["New"],
-      description: "Warm sunset orange theme.",
-    },
-    {
-      id: 7,
-      title: "Ocean Blue",
-      author: "Web Themes",
-      price: "$20.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "Cool ocean blue theme.",
-    },
-    {
-      id: 8,
-      title: "Purple Dream",
-      author: "Dream Design",
-      price: "$22.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "Dreamy purple theme.",
-    },
-  ],
-  scripts: [
-    {
-      id: 1,
-      title: "Form Validator",
-      author: "Code Masters",
-      price: "$14.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "Advanced form validation script.",
-    },
-    {
-      id: 2,
-      title: "Image Gallery",
-      author: "Script Hub",
-      price: "$12.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "Responsive image gallery script.",
-    },
-    {
-      id: 3,
-      title: "Chat Widget",
-      author: "Chat Solutions",
-      price: "$19.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["New"],
-      description: "Real-time chat widget script.",
-    },
-    {
-      id: 4,
-      title: "Analytics Tracker",
-      author: "Analytics Pro",
-      price: "$16.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "Website analytics tracking script.",
-    },
-    {
-      id: 5,
-      title: "Notification System",
-      author: "Notify Hub",
-      price: "$11.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "Push notification system.",
-    },
-    {
-      id: 6,
-      title: "Payment Gateway",
-      author: "Payment Pro",
-      price: "$24.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["New"],
-      description: "Secure payment gateway integration.",
-    },
-    {
-      id: 7,
-      title: "Email Sender",
-      author: "Email Tools",
-      price: "$13.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "Email sending automation script.",
-    },
-    {
-      id: 8,
-      title: "SEO Optimizer",
-      author: "SEO Masters",
-      price: "$17.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "SEO optimization script.",
-    },
-  ],
-  tools: [
-    {
-      id: 1,
-      title: "AI Content Writer",
-      author: "AI Labs",
+      title: "UI Kit Bundle",
+      author: "Design Studio",
       price: "$29.99",
-      image: "/placeholder.svg?height=280&width=200",
+      image: "/ui-kit.jpg",
+      images: [
+        "/ui-kit.jpg",
+        "/ui-kit-2.jpg",
+        "/ui-kit-3.jpg"
+      ],
       tags: ["Popular"],
-      description: "AI-powered content writing tool.",
+      description: "Complete UI kit with over 500 components.",
+      features: [
+        "500+ UI components",
+        "Figma and Sketch files",
+        "Fully customizable",
+        "Regular updates"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
     },
     {
       id: 2,
-      title: "Image Generator",
-      author: "AI Studio",
-      price: "$34.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "AI image generation tool.",
-    },
-    {
-      id: 3,
-      title: "Code Assistant",
-      author: "Dev AI",
-      price: "$24.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["New"],
-      description: "AI code completion assistant.",
-    },
-    {
-      id: 4,
-      title: "SEO Analyzer",
-      author: "SEO AI",
+      title: "Icon Pack Pro",
+      author: "Icon Masters",
       price: "$19.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "AI-powered SEO analysis tool.",
-    },
-    {
-      id: 5,
-      title: "Video Editor",
-      author: "Video AI",
-      price: "$39.99",
-      image: "/placeholder.svg?height=280&width=200",
+      image: "/icon-pack.jpg",
+      images: [
+        "/icon-pack.jpg",
+        "/icon-pack-2.jpg",
+        "/icon-pack-3.jpg"
+      ],
       tags: ["Trending"],
-      description: "AI video editing tool.",
-    },
-    {
-      id: 6,
-      title: "Chatbot Builder",
-      author: "Chat AI",
-      price: "$27.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["New"],
-      description: "No-code chatbot builder.",
-    },
-    {
-      id: 7,
-      title: "Design Assistant",
-      author: "Design AI",
-      price: "$31.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Popular"],
-      description: "AI design suggestion tool.",
-    },
-    {
-      id: 8,
-      title: "Translation Tool",
-      author: "Language AI",
-      price: "$22.99",
-      image: "/placeholder.svg?height=280&width=200",
-      tags: ["Trending"],
-      description: "AI translation tool.",
-    },
+      description: "Professional SVG icon collection.",
+      features: [
+        "1000+ vector icons",
+        "Multiple color variations",
+        "SVG and PNG formats",
+        "Commercial license included"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
+    }
   ],
+  "ai-prompts-automation": [
+    {
+      id: 1,
+      title: "Content Writing Pack",
+      author: "AI Experts",
+      price: "$24.99",
+      image: "/content-pack.jpg",
+      images: [
+        "/content-pack.jpg",
+        "/content-pack-2.jpg",
+        "/content-pack-3.jpg"
+      ],
+      tags: ["Popular"],
+      description: "Complete AI content writing prompt collection.",
+      features: [
+        "100+ writing prompts",
+        "Copywriting templates",
+        "Social media content",
+        "Email marketing templates"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
+    },
+    {
+      id: 2,
+      title: "Automation Scripts",
+      author: "Automation Pro",
+      price: "$34.99",
+      image: "/automation-scripts.jpg",
+      images: [
+        "/automation-scripts.jpg",
+        "/automation-scripts-2.jpg",
+        "/automation-scripts-3.jpg"
+      ],
+      tags: ["New"],
+      description: "Time-saving automation scripts pack.",
+      features: [
+        "15+ automation scripts",
+        "Cross-platform compatibility",
+        "Detailed documentation",
+        "Lifetime updates"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
+    }
+  ],
+  "courses-guides": [
+    {
+      id: 1,
+      title: "The Self-Taught Cybersecurity Navigator",
+      author: "Mr Marouan Anouar",
+      price: "$29.99",
+      image: "https://public-files.gumroad.com/f1uaqtct37x4gl3i62yz3u6dhsnf",
+      images: [
+        "https://public-files.gumroad.com/41fr6yxhrw2f8fh0eigm8etym0c2",
+        "",
+        ""
+      ],
+      tags: ["Cybersecurity", "New"],
+      description: "Your complete guide to a cybersecurity career. Learn Red Team, Blue Team, and Bug Bounty with practical labs and a step-by-step roadmap for beginners.",
+      features: [
+        "Size : 9MB",
+        "Length : 109 pages"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/TheSelf-TaughtCybersecurityNavigator?wanted=true"
+    },
+    {
+      id: 2,
+      title: "JavaScript Advanced",
+      author: "Sarah Johnson",
+      price: "$24.99",
+      image: "/javascript-book.jpg",
+      images: [
+        "/javascript-book.jpg",
+        "/javascript-book-2.jpg",
+        "/javascript-book-3.jpg"
+      ],
+      tags: ["Trending"],
+      description: "Master advanced JavaScript concepts and patterns.",
+      features: [
+        "Advanced ES6+ features",
+        "Functional programming",
+        "Performance optimization",
+        "Real-world examples"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
+    }
+  ],
+  "service-offers": [
+    {
+      id: 1,
+      title: "Website Audit Service",
+      author: "Web Experts",
+      price: "$99.99",
+      image: "/website-audit.jpg",
+      images: [
+        "/website-audit.jpg",
+        "/website-audit-2.jpg",
+        "/website-audit-3.jpg"
+      ],
+      tags: ["Popular"],
+      description: "Comprehensive website performance and SEO audit.",
+      features: [
+        "Performance analysis",
+        "SEO optimization report",
+        "Security assessment",
+        "Actionable recommendations"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
+    }
+  ],
+  "data-research": [
+    {
+      id: 1,
+      title: "Market Research Bundle",
+      author: "Data Insights",
+      price: "$49.99",
+      image: "/market-research.jpg",
+      images: [
+        "/market-research.jpg",
+        "/market-research-2.jpg",
+        "/market-research-3.jpg"
+      ],
+      tags: ["Trending"],
+      description: "Comprehensive market research data package.",
+      features: [
+        "Industry analysis reports",
+        "Competitor research data",
+        "Consumer behavior insights",
+        "Excel and CSV formats"
+      ],
+      gumroadLink: "https://nexa1337.gumroad.com/l/?wanted=true"
+    }
+  ]
 }
 
 const currentPage = {}
@@ -711,18 +547,27 @@ function initializeProducts() {
   })
 
   // Tab buttons
+  setupTabEventListeners()
+}
+
+function setupTabEventListeners() {
   document.querySelectorAll(".tab-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const section = e.target.closest(".products-section")
-      const category = section.id
+      const tabContainer = e.target.closest(".category-tabs")
+      const section = tabContainer.closest(".products-section")
+      const category = section ? section.id : null
       const filter = e.target.dataset.filter
 
-      section.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"))
-      e.target.classList.add("active")
+      if (category && productsData[category]) {
+        // Remove active class from all tabs in this section
+        tabContainer.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"))
+        // Add active class to clicked tab
+        e.target.classList.add("active")
 
-      currentFilter[category] = filter
-      currentPage[category] = 1
-      renderProducts(category)
+        currentFilter[category] = filter
+        currentPage[category] = 1
+        renderProducts(category)
+      }
     })
   })
 }
@@ -778,7 +623,14 @@ function renderProducts(category) {
       .map(
         (product) => `
           <div class="product-card">
-              <img src="${product.image}" alt="${product.title}" class="product-image" loading="lazy">
+              ${product.image ? 
+                `<img src="${product.image}" alt="${product.title}" class="product-image" loading="lazy">` : 
+                `<div class="product-image">
+                  <div class="product-image-placeholder">
+                    <span>${product.title.charAt(0)}</span>
+                  </div>
+                </div>`
+              }
               <div class="product-info">
                   <h3 class="product-title">${product.title}</h3>
                   <p class="product-author">by ${product.author}</p>
@@ -787,8 +639,8 @@ function renderProducts(category) {
                   </div>
                   <div class="product-footer">
                       <span class="product-price">${product.price}</span>
-                      <button class="quick-view-btn" onclick="openQuickView(${product.id}, '${category}')" aria-label="Quick view ${product.title}">Quick View</button>
                   </div>
+                  <button class="quick-view-btn" onclick="openQuickView(${product.id}, '${category}')" aria-label="Quick view ${product.title}">Quick View</button>
               </div>
           </div>
       `,
@@ -850,15 +702,50 @@ function openQuickView(productId, category) {
   const product = productsData[category].find((p) => p.id === productId)
   if (!product) return
 
+  // Set main image
   document.getElementById("qv-image").src = product.image
   document.getElementById("qv-title").textContent = product.title
   document.getElementById("qv-author").textContent = `by ${product.author}`
-  document.getElementById("qv-description").textContent = product.description
+  
+  // Create description with features list if available
+  let descriptionHTML = `<p>${product.description}</p>`
+  if (product.features && product.features.length > 0) {
+    descriptionHTML += `
+      <h4>What's Included:</h4>
+      <ul class="qv-features-list">
+        ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+      </ul>
+    `
+  }
+  
+  document.getElementById("qv-description").innerHTML = descriptionHTML
   document.getElementById("qv-price").textContent = product.price
   document.getElementById("qv-tags").innerHTML = product.tags
     .map((tag) => `<span class="qv-tag">${tag}</span>`)
     .join("")
-  document.getElementById("qv-buy-btn").href = `https://gumroad.com/search?search=${encodeURIComponent(product.title)}`
+  document.getElementById("qv-buy-btn").href = product.gumroadLink || `https://gumroad.com/search?search=${encodeURIComponent(product.title)}`
+
+  // Handle multiple images if available
+  const thumbnailsContainer = document.getElementById("qv-thumbnails");
+  if (product.images && product.images.length > 1) {
+    thumbnailsContainer.innerHTML = product.images.map((img, index) => 
+      `<img src="${img}" alt="Product image ${index + 1}" class="${index === 0 ? 'active' : ''}" data-src="${img}">`
+    ).join('');
+    
+    // Add click event listeners to thumbnails
+    thumbnailsContainer.querySelectorAll('img').forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        // Update main image
+        document.getElementById("qv-image").src = product.images[index];
+        
+        // Update active thumbnail
+        thumbnailsContainer.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  } else {
+    thumbnailsContainer.innerHTML = '';
+  }
 
   document.getElementById("quick-view-modal").classList.add("active")
   document.body.classList.add("popup-open")

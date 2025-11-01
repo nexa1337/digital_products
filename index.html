@@ -84,11 +84,12 @@
             
             <div class="navbar-menu" id="navbar-menu">
                 <a href="#home" class="nav-link">Home</a>
-                <a href="#ebooks" class="nav-link">E-Books</a>
-                <a href="#templates" class="nav-link">Templates</a>
-                <a href="#themes" class="nav-link">Themes</a>
-                <a href="#scripts" class="nav-link">Scripts</a>
-                <a href="#tools" class="nav-link">AI Tools</a>
+                <a href="#templates-tools" class="nav-link">Templates & Tools</a>
+                <a href="#digital-design-assets" class="nav-link">Design Assets</a>
+                <a href="#ai-prompts-automation" class="nav-link">AI Prompts</a>
+                <a href="#courses-guides" class="nav-link">Courses</a>
+                <a href="#service-offers" class="nav-link">Services</a>
+                <a href="#data-research" class="nav-link">Data & Research</a>
             </div>
             
             <div class="navbar-right">
@@ -158,9 +159,9 @@
     </section>
 
     <!-- Product Sections -->
-    <section class="products-section" id="ebooks">
+    <section class="products-section" id="templates-tools">
         <div class="section-header">
-            <h2>E-Books</h2>
+            <h2>Templates & Tools</h2>
             <div class="category-tabs">
                 <button class="tab-btn active" data-filter="all">All</button>
                 <button class="tab-btn" data-filter="popular">Popular</button>
@@ -169,13 +170,13 @@
             </div>
         </div>
         
-        <div class="products-grid" id="ebooks-grid"></div>
-        <div class="pagination" id="ebooks-pagination"></div>
+        <div class="products-grid" id="templates-tools-grid"></div>
+        <div class="pagination" id="templates-tools-pagination"></div>
     </section>
 
-    <section class="products-section" id="templates">
+    <section class="products-section" id="digital-design-assets">
         <div class="section-header">
-            <h2>Templates</h2>
+            <h2>Digital Design Assets</h2>
             <div class="category-tabs">
                 <button class="tab-btn active" data-filter="all">All</button>
                 <button class="tab-btn" data-filter="popular">Popular</button>
@@ -184,13 +185,13 @@
             </div>
         </div>
         
-        <div class="products-grid" id="templates-grid"></div>
-        <div class="pagination" id="templates-pagination"></div>
+        <div class="products-grid" id="digital-design-assets-grid"></div>
+        <div class="pagination" id="digital-design-assets-pagination"></div>
     </section>
 
-    <section class="products-section" id="themes">
+    <section class="products-section" id="ai-prompts-automation">
         <div class="section-header">
-            <h2>Themes</h2>
+            <h2>AI Prompts & Automation</h2>
             <div class="category-tabs">
                 <button class="tab-btn active" data-filter="all">All</button>
                 <button class="tab-btn" data-filter="popular">Popular</button>
@@ -199,13 +200,13 @@
             </div>
         </div>
         
-        <div class="products-grid" id="themes-grid"></div>
-        <div class="pagination" id="themes-pagination"></div>
+        <div class="products-grid" id="ai-prompts-automation-grid"></div>
+        <div class="pagination" id="ai-prompts-automation-pagination"></div>
     </section>
 
-    <section class="products-section" id="scripts">
+    <section class="products-section" id="courses-guides">
         <div class="section-header">
-            <h2>Scripts</h2>
+            <h2>Courses & Guides</h2>
             <div class="category-tabs">
                 <button class="tab-btn active" data-filter="all">All</button>
                 <button class="tab-btn" data-filter="popular">Popular</button>
@@ -214,13 +215,13 @@
             </div>
         </div>
         
-        <div class="products-grid" id="scripts-grid"></div>
-        <div class="pagination" id="scripts-pagination"></div>
+        <div class="products-grid" id="courses-guides-grid"></div>
+        <div class="pagination" id="courses-guides-pagination"></div>
     </section>
 
-    <section class="products-section" id="tools">
+    <section class="products-section" id="service-offers">
         <div class="section-header">
-            <h2>AI Tools</h2>
+            <h2>Service-Based Offers</h2>
             <div class="category-tabs">
                 <button class="tab-btn active" data-filter="all">All</button>
                 <button class="tab-btn" data-filter="popular">Popular</button>
@@ -229,8 +230,23 @@
             </div>
         </div>
         
-        <div class="products-grid" id="tools-grid"></div>
-        <div class="pagination" id="tools-pagination"></div>
+        <div class="products-grid" id="service-offers-grid"></div>
+        <div class="pagination" id="service-offers-pagination"></div>
+    </section>
+
+    <section class="products-section" id="data-research">
+        <div class="section-header">
+            <h2>Data & Research Files</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="popular">Popular</button>
+                <button class="tab-btn" data-filter="new">New</button>
+                <button class="tab-btn" data-filter="trending">Trending</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="data-research-grid"></div>
+        <div class="pagination" id="data-research-pagination"></div>
     </section>
 
     <!-- Quick View Modal -->
@@ -239,8 +255,11 @@
         <div class="quick-view-content">
             <button class="quick-view-close">&times;</button>
             <div class="quick-view-body">
-                <div class="quick-view-image">
-                    <img id="qv-image" src="/placeholder.svg" alt="Product">
+                <div class="quick-view-image-container">
+                    <div class="quick-view-image-slider">
+                        <img id="qv-image" src="/placeholder.svg" alt="Product">
+                    </div>
+                    <div class="quick-view-image-thumbnails" id="qv-thumbnails"></div>
                 </div>
                 <div class="quick-view-details">
                     <h3 id="qv-title"></h3>
@@ -249,7 +268,12 @@
                     <div class="qv-tags" id="qv-tags"></div>
                     <div class="qv-price-section">
                         <span class="qv-price" id="qv-price"></span>
-                        <a href="#" class="qv-buy-btn" id="qv-buy-btn" target="_blank">Buy on Gumroad</a>
+                        <div class="qv-buttons">
+                            <a href="#" class="qv-buy-btn" id="qv-buy-btn" target="_blank">I Want This</a>
+                            <a href="https://api.whatsapp.com/send?phone=212723242286" class="qv-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
