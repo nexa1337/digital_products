@@ -3,354 +3,2754 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXA1337 - Digital Marketplace | Premium E-Books, Templates & AI Tools</title>
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <meta name="description" content="NEXA1337 is your ultimate digital marketplace for premium e-books, templates, themes, scripts, and AI tools. Discover high-quality digital products to grow your business.">
-    <meta name="keywords" content="digital marketplace, e-books, templates, themes, scripts, AI tools, digital products, online store">
-    <meta name="author" content="NEXA1337">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta property="og:title" content="NEXA1337 - Digital Marketplace">
-    <meta property="og:description" content="Discover premium digital products including e-books, templates, themes, scripts, and AI tools.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nexa1337.com">
-    <meta property="og:image" content="https://nexa1337.com/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NEXA1337 - Digital Marketplace">
-    <meta name="twitter:description" content="Premium digital products for your business growth">
-    <meta name="twitter:image" content="https://nexa1337.com/twitter-image.png">
-    <meta name="theme-color" content="#6a79fa">
-    <link rel="canonical" href="https://nexa1337.com">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>N E X A 1337 - Premium Digital Products</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Dark Mode Variables */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --card-bg: #ffffff;
+        }
+        
+        body.dark-mode {
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --border-color: #374151;
+            --card-bg: #1f2937;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+        
+        /* Sticky Header */
+        .sticky-header {
+            position: fixed;
+            top: 40px;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        body.dark-mode .sticky-header {
+            background: rgba(17, 24, 39, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .sticky-header {
+                top: 30px;
+            }
+            
+            .sticky-header nav {
+                padding: 1rem 0.75rem;
+            }
+            
+            .sticky-header .w-10 {
+                width: 2rem;
+                height: 2rem;
+            }
+            
+            .sticky-header .text-2xl {
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .sticky-header {
+                top: 25px;
+            }
+            
+            .sticky-header nav {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .sticky-header .text-2xl {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+        }
+        
+        body.dark-mode .top-bar {
+            background: linear-gradient(135deg, #4f46e5 0%, #6b21a8 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 0.3rem 0;
+                font-size: 0.7rem;
+            }
+            
+            .top-bar .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .top-bar .flex {
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .top-bar {
+                font-size: 0.65rem;
+                padding: 0.25rem 0;
+            }
+            
+            .top-bar i {
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 112px;
+            left: 0;
+            width: 100%;
+            background: var(--card-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 999;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                top: 90px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .mobile-menu {
+                top: 75px;
+                padding: 0.75rem;
+            }
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            width: 50px;
+            height: 26px;
+            background: #e5e7eb;
+            border-radius: 13px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        body.dark-mode .theme-toggle {
+            background: #4f46e5;
+        }
+        
+        .theme-toggle-circle {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        body.dark-mode .theme-toggle-circle {
+            transform: translateX(24px);
+        }
+        
+        /* Hero Section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(249, 250, 251, 1), transparent);
+        }
+        
+        body.dark-mode .hero-gradient::after {
+            background: linear-gradient(to top, rgba(17, 24, 39, 1), transparent);
+        }
+        
+        .hero-search {
+            position: relative;
+            max-width: 700px;
+            margin: 2rem auto 0;
+        }
+        
+        .hero-search input {
+            width: 100%;
+            padding: 1.25rem 4rem 1.25rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            background: white;
+            color: #111827;
+        }
+        
+        .hero-search input::placeholder {
+            color: #9ca3af;
+        }
+        
+        .hero-search input:focus {
+            outline: none;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .hero-search button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-search button:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .hero-feature i {
+            font-size: 1.5rem;
+        }
+        
+        /* Mobile Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero-gradient {
+                min-height: 500px;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                margin-top: 90px !important;
+            }
+            
+            .hero-search {
+                max-width: 100%;
+            }
+            
+            .hero-search input {
+                padding: 1rem 3.5rem 1rem 1rem;
+                font-size: 0.95rem;
+            }
+            
+            .hero-search button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-features {
+                gap: 1rem;
+            }
+            
+            .hero-feature {
+                font-size: 0.85rem;
+            }
+            
+            .hero-feature i {
+                font-size: 1.2rem;
+            }
+            
+            .category-icon {
+                width: 75px;
+                height: 75px;
+                font-size: 2.2rem;
+            }
+            
+            .category-card {
+                padding: 1.75rem 1.25rem;
+            }
+            
+            .category-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .product-image {
+                height: 200px;
+            }
+            
+            .modal-content {
+                width: 98%;
+                max-height: 95vh;
+            }
+            
+            .swiper {
+                height: 250px;
+            }
+            
+            .product-price {
+                font-size: 1.8rem;
+            }
+            
+            .action-btn {
+                padding: 0.85rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .pagination {
+                gap: 0.25rem;
+            }
+            
+            .pagination-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            
+            .pagination-info {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+            
+            .hero-gradient {
+                margin-top: 75px !important;
+                min-height: 450px;
+            }
+            
+            .hero-search input {
+                font-size: 0.9rem;
+                padding: 0.9rem 3rem 0.9rem 0.9rem;
+            }
+            
+            .hero-search button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+                right: 6px;
+            }
+            
+            .category-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 1.8rem;
+            }
+            
+            .category-card {
+                padding: 1.25rem 0.75rem;
+            }
+            
+            .category-card h3 {
+                font-size: 0.95rem;
+            }
+            
+            .category-filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .pagination-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.85rem;
+            }
+            
+            .modal-close {
+                top: 1rem;
+                right: 1rem;
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+            }
+            
+            .action-btn {
+                font-size: 0.95rem;
+                padding: 0.75rem 1.2rem;
+            }
+            
+            .swiper {
+                height: 220px;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        /* Category Cards */
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg) 100%);
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .category-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .category-card:hover::before {
+            opacity: 1;
+        }
+        
+        .category-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        body.dark-mode .category-card {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .category-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+            position: relative;
+        }
+        
+        .category-icon::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 26px;
+            opacity: 0;
+            filter: blur(10px);
+            transition: opacity 0.5s ease;
+        }
+        
+        .category-card:hover .category-icon::before {
+            opacity: 0.7;
+        }
+        
+        .category-card:hover .category-icon {
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.6);
+        }
+        
+        .category-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+        }
+        
+        .category-card:hover h3 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .category-card p {
+            color: var(--text-secondary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover p {
+            color: #667eea;
+            transform: scale(1.05);
+        }
+        
+        /* Product Cards */
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        body.dark-mode .product-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .wishlist-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .wishlist-btn:hover {
+            background: #ef4444;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .wishlist-btn.active {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .rating {
+            color: #fbbf24;
+        }
+        
+        .quick-view-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .quick-view-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1100px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+            position: relative;
+        }
+        
+        body.dark-mode .modal-content {
+            color: var(--text-primary);
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .modal-close:hover {
+            transform: rotate(90deg);
+            background: #dc2626;
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .action-btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+        
+        .paypal-btn {
+            background: #0070BA;
+            color: white;
+        }
+        
+        .custom-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        /* CTA Button Animation */
+        @keyframes pulseButton {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pulse-animation {
+            animation: pulseButton 2s ease-in-out infinite;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+        }
+        
+        .footer-link {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #667eea;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .desktop-search {
+                display: none;
+            }
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            position: relative;
+        }
+        
+        .search-bar input {
+            padding: 0.75rem 3rem 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            width: 100%;
+            transition: all 0.3s ease;
+            background: white;
+            color: #111827;
+        }
+        
+        body.dark-mode .search-bar input {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        body.dark-mode .search-bar input {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+        
+        .nav-link {
+            color: var(--text-primary);
+        }
+        
+        body.dark-mode .bg-gray-50 {
+            background-color: var(--bg-secondary) !important;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        body.dark-mode .top-bar {
+            background: linear-gradient(135deg, #4f46e5 0%, #6b21a8 100%);
+        }
+        
+        /* Visitor Counter */
+        .visitor-counter {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .visitor-counter {
+                padding: 0.2rem 0.5rem;
+                gap: 0.3rem;
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .visitor-counter {
+                padding: 0.15rem 0.4rem;
+                font-size: 0.65rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .visitor-counter {
+                padding: 0.2rem 0.5rem;
+                gap: 0.3rem;
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .visitor-counter {
+                padding: 0.15rem 0.4rem;
+                font-size: 0.65rem;
+            }
+        }
+        
+        .visitor-pulse {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        /* Search Highlight */
+        .search-highlight {
+            background-color: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        body.dark-mode .search-highlight {
+            background-color: #854d0e;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-top.visible {
+            display: flex;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+        
+        body.dark-mode .scroll-top {
+            background: linear-gradient(135deg, #4f46e5 0%, #6b21a8 100%);
+        }
+        
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .category-filter-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        body.dark-mode .category-filter-btn {
+            background: var(--bg-secondary);
+            border-color: var(--border-color);
+            color: var(--text-secondary);
+        }
+        
+        .category-filter-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .category-filter-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: white;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .pagination-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        body.dark-mode .pagination-btn {
+            background: var(--bg-secondary);
+            border-color: var(--border-color);
+            color: var(--text-secondary);
+        }
+        
+        .pagination-btn:hover:not(:disabled) {
+            border-color: #667eea;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .pagination-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: white;
+        }
+        
+        .pagination-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        
+        .pagination-info {
+            padding: 0.75rem 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Blog Section */
+        .blog {
+            background: var(--bg-primary);
+        }
+        
+        .blog-carousel-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .carousel-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+        
+        .carousel-prev {
+            left: -20px;
+        }
+        
+        .carousel-next {
+            right: -20px;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Top Bar with Date, Time, and Visitor Counter -->
+    <!-- Top Bar with Date and Time -->
     <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="top-bar-left">
-                <span id="current-date"></span>
-                <span class="separator">•</span>
-                <span id="current-time"></span>
-            </div>
-            <div class="top-bar-right">
-                <div class="visitor-indicator">
-                    <span class="visitor-dot" id="visitor-dot"></span>
-                    <span aria-live="polite" aria-atomic="true" id="visitor-text">👥 <span id="visitor-count">132</span> Online</span>
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2 md:gap-4">
+                    <span class="hidden sm:inline"><i class="far fa-calendar-alt"></i> <span id="currentDate"></span></span>
+                    <span><i class="far fa-clock"></i> <span id="currentTime"></span></span>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Popup Modal (First Load) -->
-    <div id="popup-modal" class="popup-modal hidden">
-        <div class="popup-overlay"></div>
-        <div class="popup-content">
-            <button class="popup-close" aria-label="Close popup">&times;</button>
-            
-            <div class="popup-icon-cluster">
-                <span class="popup-icon">📚</span>
-                <span class="popup-icon">🎨</span>
-                <span class="popup-icon">🤖</span>
-            </div>
-            
-            <h2>Explore Our Platforms</h2>
-            <p class="popup-subtitle">Discover our digital solutions and resources across multiple platforms.</p>
-            <p class="popup-tagline">Get more traffic and grow your business today.</p>
-            
-            <div class="popup-links">
-                <a href="#blog" class="popup-link popup-cta">Visit Our Blog</a>
-                <a href="#ebooks" class="popup-link popup-cta">Buy Our Books</a>
-                <a href="#" class="popup-link popup-cta">Our MindMap</a>
-                <a href="#" class="popup-link popup-cta">Our Services</a>
-                <a href="#" class="popup-link popup-cta">Get Digital Website</a>
-            </div>
-            
-            <p class="popup-trust">Join 500+ businesses already growing with <strong>N E X A 1337</strong></p>
-            
-            <label class="popup-checkbox">
-                <input type="checkbox" id="popup-dont-show" aria-label="Don't show this popup again">
-                <span>Don't show this again</span>
-            </label>
-        </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <span class="logo-nexa">NEXA</span><span class="logo-number">1337</span>
-            </div>
-            
-            <div class="navbar-menu" id="navbar-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#templates-tools" class="nav-link">Templates & Tools</a>
-                <a href="#digital-design-assets" class="nav-link">Design Assets</a>
-                <a href="#ai-prompts-automation" class="nav-link">AI Prompts</a>
-                <a href="#courses-guides" class="nav-link">Courses</a>
-                <a href="#service-offers" class="nav-link">Services</a>
-                <a href="#data-research" class="nav-link">Data & Research</a>
-            </div>
-            
-            <div class="navbar-right">
-                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
-                    <span class="theme-icon">🌙</span>
-                </button>
-                <button class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="snow-container" id="snow-container"></div>
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <h1>Welcome to NEXA1337</h1>
-            <p>Your Ultimate Digital Marketplace for Premium Products</p>
-            
-            <div class="search-container">
-                <input 
-                    type="text" 
-                    id="search-input" 
-                    class="search-bar" 
-                    placeholder="Search products..."
-                >
-                <button class="search-btn" aria-label="Search">
-                    <i class="fas fa-magnifying-glass"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature Icons -->
-    <section class="features">
-        <div class="features-container">
-            <div class="feature-item">
-                <div class="feature-icon">📚</div>
-                <h3>Premium E-Books</h3>
-                <p>Learn from industry experts</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🎨</div>
-                <h3>Beautiful Templates</h3>
-                <p>Ready-to-use designs</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌈</div>
-                <h3>Modern Themes</h3>
-                <p>Stunning visual designs</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">⚙️</div>
-                <h3>Powerful Scripts</h3>
-                <p>Automate your workflow</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🤖</div>
-                <h3>AI Tools</h3>
-                <p>Next-gen solutions</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Sections -->
-    <section class="products-section" id="templates-tools">
-        <div class="section-header">
-            <h2>Templates & Tools</h2>
-            <div class="category-tabs">
-                <button class="tab-btn active" data-filter="all">All</button>
-                <button class="tab-btn" data-filter="popular">Popular</button>
-                <button class="tab-btn" data-filter="new">New</button>
-                <button class="tab-btn" data-filter="trending">Trending</button>
-            </div>
-        </div>
-        
-        <div class="products-grid" id="templates-tools-grid"></div>
-        <div class="pagination" id="templates-tools-pagination"></div>
-    </section>
-
-    <section class="products-section" id="digital-design-assets">
-        <div class="section-header">
-            <h2>Digital Design Assets</h2>
-            <div class="category-tabs">
-                <button class="tab-btn active" data-filter="all">All</button>
-                <button class="tab-btn" data-filter="popular">Popular</button>
-                <button class="tab-btn" data-filter="new">New</button>
-                <button class="tab-btn" data-filter="trending">Trending</button>
-            </div>
-        </div>
-        
-        <div class="products-grid" id="digital-design-assets-grid"></div>
-        <div class="pagination" id="digital-design-assets-pagination"></div>
-    </section>
-
-    <section class="products-section" id="ai-prompts-automation">
-        <div class="section-header">
-            <h2>AI Prompts & Automation</h2>
-            <div class="category-tabs">
-                <button class="tab-btn active" data-filter="all">All</button>
-                <button class="tab-btn" data-filter="popular">Popular</button>
-                <button class="tab-btn" data-filter="new">New</button>
-                <button class="tab-btn" data-filter="trending">Trending</button>
-            </div>
-        </div>
-        
-        <div class="products-grid" id="ai-prompts-automation-grid"></div>
-        <div class="pagination" id="ai-prompts-automation-pagination"></div>
-    </section>
-
-    <section class="products-section" id="courses-guides">
-        <div class="section-header">
-            <h2>Courses & Guides</h2>
-            <div class="category-tabs">
-                <button class="tab-btn active" data-filter="all">All</button>
-                <button class="tab-btn" data-filter="popular">Popular</button>
-                <button class="tab-btn" data-filter="new">New</button>
-                <button class="tab-btn" data-filter="trending">Trending</button>
-            </div>
-        </div>
-        
-        <div class="products-grid" id="courses-guides-grid"></div>
-        <div class="pagination" id="courses-guides-pagination"></div>
-    </section>
-
-    <section class="products-section" id="service-offers">
-        <div class="section-header">
-            <h2>Service-Based Offers</h2>
-            <div class="category-tabs">
-                <button class="tab-btn active" data-filter="all">All</button>
-                <button class="tab-btn" data-filter="popular">Popular</button>
-                <button class="tab-btn" data-filter="new">New</button>
-                <button class="tab-btn" data-filter="trending">Trending</button>
-            </div>
-        </div>
-        
-        <div class="products-grid" id="service-offers-grid"></div>
-        <div class="pagination" id="service-offers-pagination"></div>
-    </section>
-
-    <section class="products-section" id="data-research">
-        <div class="section-header">
-            <h2>Data & Research Files</h2>
-            <div class="category-tabs">
-                <button class="tab-btn active" data-filter="all">All</button>
-                <button class="tab-btn" data-filter="popular">Popular</button>
-                <button class="tab-btn" data-filter="new">New</button>
-                <button class="tab-btn" data-filter="trending">Trending</button>
-            </div>
-        </div>
-        
-        <div class="products-grid" id="data-research-grid"></div>
-        <div class="pagination" id="data-research-pagination"></div>
-    </section>
-
-    <!-- Quick View Modal -->
-    <div id="quick-view-modal" class="quick-view-modal">
-        <div class="quick-view-overlay"></div>
-        <div class="quick-view-content">
-            <button class="quick-view-close">&times;</button>
-            <div class="quick-view-body">
-                <div class="quick-view-image-container">
-                    <div class="quick-view-image-slider">
-                        <img id="qv-image" src="/placeholder.svg" alt="Product">
+                <div class="flex items-center gap-2 md:gap-4">
+                    <div class="visitor-counter">
+                        <span class="visitor-pulse"></span>
+                        <i class="fas fa-users"></i>
+                        <span id="visitorCount">0</span> <span class="hidden sm:inline">Online</span>
                     </div>
-                    <div class="quick-view-image-thumbnails" id="qv-thumbnails"></div>
+                    <div class="hidden lg:flex items-center gap-4">
+                        <span><i class="fas fa-phone"></i> +212 723 242 286</span>
+                        <span><i class="fas fa-envelope"></i> Support@nexa1337.com</span>
+                    </div>
                 </div>
-                <div class="quick-view-details">
-                    <h3 id="qv-title"></h3>
-                    <p class="qv-author" id="qv-author"></p>
-                    <p class="qv-description" id="qv-description"></p>
-                    <div class="qv-tags" id="qv-tags"></div>
-                    <div class="qv-price-section">
-                        <span class="qv-price" id="qv-price"></span>
-                        <div class="qv-buttons">
-                            <a href="#" class="qv-buy-btn" id="qv-buy-btn" target="_blank">I Want This</a>
-                            <a href="https://api.whatsapp.com/send?phone=212723242286" class="qv-whatsapp-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-whatsapp"></i> Contact via WhatsApp
-                            </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <header class="sticky-header">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-store text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">N E X A 1337</span>
+                </div>
+                
+                <!-- Navigation Links - Desktop -->
+                <div class="hidden md:flex items-center gap-8 desktop-nav">
+                    <a href="#home" class="nav-link hover:text-indigo-600 font-medium transition">Home</a>
+                    <a href="#products" class="nav-link hover:text-indigo-600 font-medium transition">Products</a>
+                    <a href="#categories" class="nav-link hover:text-indigo-600 font-medium transition">Categories</a>
+                    <a href="#blog" class="nav-link hover:text-indigo-600 font-medium transition">Blog</a>
+                    <a href="#contact" class="nav-link hover:text-indigo-600 font-medium transition">Contact</a>
+                </div>
+                
+                <!-- Search Bar - Desktop -->
+                <div class="hidden lg:block search-bar w-96 desktop-search">
+                    <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts(event)">
+                    <button onclick="performSearch()"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <!-- User Icons -->
+                <div class="flex items-center gap-4">
+                    <!-- Dark Mode Toggle -->
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <div class="theme-toggle-circle">
+                            <span id="themeIcon">☀️</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scroll-to-top" title="Scroll to top">
-        ↑
-    </button>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>N E X A <span style="color:#6a79fa;">1337</span></h4>
-                    <p>Empowering digital growth through creativity, technology, and smart strategy.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Download App</h4>
-                    <div class="app-download-links">
-                        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" class="app-store-link" aria-label="Download on Google Play">
-                            <i class="fab fa-google-play"></i>
-                            <span>Google Play</span>
-                        </a>
-                        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="app-store-link" aria-label="Download on App Store">
-                            <i class="fab fa-apple"></i>
-                            <span>App Store</span>
-                        </a>
+                    
+                    <!-- Wishlist Button -->
+                    <button onclick="openWishlist()" class="relative w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center transition">
+                        <i class="fas fa-heart nav-link"></i>
+                        <span id="wishlistCount" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center" style="display: none;">0</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <div class="hamburger md:hidden" onclick="toggleMobileMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 NEXA1337 – All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/nexa1337" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://instagram.com/nexa1337" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://tiktok.com/@nexa.1337" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=212723242286" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="flex flex-col gap-4">
+                    <a href="#home" class="nav-link hover:text-indigo-600 font-medium transition py-2" onclick="toggleMobileMenu()">Home</a>
+                    <a href="#products" class="nav-link hover:text-indigo-600 font-medium transition py-2" onclick="toggleMobileMenu()">Products</a>
+                    <a href="#categories" class="nav-link hover:text-indigo-600 font-medium transition py-2" onclick="toggleMobileMenu()">Categories</a>
+                    <a href="#blog" class="nav-link hover:text-indigo-600 font-medium transition py-2" onclick="toggleMobileMenu()">Blog</a>
+                    <a href="#contact" class="nav-link hover:text-indigo-600 font-medium transition py-2" onclick="toggleMobileMenu()">Contact</a>
+                    <div class="search-bar mt-2">
+                        <input type="text" id="searchInputMobile" placeholder="Search products..." onkeyup="searchProducts(event)">
+                        <button onclick="performSearch()"><i class="fas fa-search"></i></button>
+                    </div>
                 </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient" style="margin-top: 112px; padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container mx-auto px-4">
+            <div class="text-center text-white max-w-5xl mx-auto relative z-10" data-aos="fade-up">
+                <div class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
+                    <span class="text-sm font-semibold">🎉 New Products Every Week</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">2M+ Curated Digital Products</h1>
+                <p class="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-purple-100 px-4">Discover premium templates, themes, graphics, and digital assets for your next project</p>
+                
+                <!-- Hero Search -->
+                <div class="hero-search px-2 md:px-0" data-aos="fade-up" data-aos-delay="100">
+                    <input type="text" id="heroSearchInput" placeholder="Search for templates, themes, scripts..." onkeyup="heroSearch(event)">
+                    <button onclick="performHeroSearch()"><i class="fas fa-search"></i><span class="hidden sm:inline ml-1"> Search</span></button>
+                </div>
+                
+                <!-- Hero Features -->
+                <div class="hero-features" data-aos="fade-up" data-aos-delay="200">
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="hidden sm:inline">Premium Quality</span>
+                        <span class="sm:hidden">Premium</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-download"></i>
+                        <span class="hidden sm:inline">Instant Download</span>
+                        <span class="sm:hidden">Download</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-headset"></i>
+                        <span class="hidden sm:inline">24/7 Support</span>
+                        <span class="sm:hidden">Support</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="hidden sm:inline">Secure Payment</span>
+                        <span class="sm:hidden">Secure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section id="categories" class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <div class="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg">
+                    ✨ EXPLORE CATEGORIES
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Browse Our Collections</h2>
+                <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto px-4">Discover amazing digital products across multiple categories</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 md:gap-8">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">WordPress Themes</h3>
+                    <p class="text-gray-600">450+ Products</p>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">HTML Templates</h3>
+                    <p class="text-gray-600">320+ Products</p>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Graphics</h3>
+                    <p class="text-gray-600">780+ Products</p>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">UI Kits</h3>
+                    <p class="text-gray-600">290+ Products</p>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mobile Templates</h3>
+                    <p class="text-gray-600">180+ Products</p>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fas fa-photo-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Stock Photos</h3>
+                    <p class="text-gray-600">1200+ Products</p>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Fonts</h3>
+                    <p class="text-gray-600">560+ Products</p>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Plugins</h3>
+                    <p class="text-gray-600">340+ Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="blog py-12 md:py-20" style="animation: 0.8s ease-out 0.5s 1 normal both running slideUp;">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <div class="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg">
+                    📝 BLOG
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Growth Tips & Trends</h2>
+                <p class="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">Learn how to scale your business with proven digital strategies.</p>
+            </div>
+            <div class="blog-carousel-wrapper" style="position: relative;">
+                <div class="blog-grid" id="blogGrid" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p style="color: #6b7280; font-size: 1.1rem;">New posts coming soon, explore our <a href="https://nexa1337blogging.blogspot.com" target="_blank" rel="noopener noreferrer" style="color: #667eea; font-weight: 600; text-decoration: underline;">Blog Hub</a></p>
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Previous posts" style="display: none;">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav carousel-next" id="carouselNext" aria-label="Next posts" style="display: none;">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators" style="display: none;"></div>
+        </div>
+    </section>
+    
+    <!-- Featured Products Section -->
+    <section id="products" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Featured Products</h2>
+                <p class="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">Every month we pick some best products for you. This month's best web themes & templates have arrived.</p>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="category-filter" data-aos="fade-up">
+                <button class="category-filter-btn active" onclick="filterByCategory('all')">All Products</button>
+                <button class="category-filter-btn" onclick="filterByCategory('ebooks')">Ebooks</button>
+                <button class="category-filter-btn" onclick="filterByCategory('templates')">Templates</button>
+                <button class="category-filter-btn" onclick="filterByCategory('scripts')">Scripts</button>
+                <button class="category-filter-btn" onclick="filterByCategory('products')">Products</button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8" id="productsGrid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons will be inserted here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact" class="py-12 md:py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-store text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">N E X A 1337</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted marketplace for premium digital products and assets.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">All Products</a></li>
+                        <li><a href="#" class="footer-link">Categories</a></li>
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Refund Policy</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope text-indigo-500 mt-1"></i>
+                            <span class="text-gray-400">Support@nexa1337.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fab fa-whatsapp text-indigo-500 mt-1"></i>
+                            <span class="text-gray-400">+212 723 242 286</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-indigo-500 mt-1"></i>
+                            <span class="text-gray-400">Digital Marketplace</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 md:pt-8 text-center">
+                <p class="text-gray-400 text-sm md:text-base">&copy; 2024 N E X A 1337. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <!-- Left Side - Image Gallery -->
+                <div class="p-8 bg-gray-50">
+                    <div class="swiper productSwiper">
+                        <div class="swiper-wrapper" id="modalImages">
+                            <!-- Images will be inserted here -->
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Product Details -->
+                <div class="p-8">
+                    <h2 id="modalTitle" class="text-3xl font-bold mb-4"></h2>
+                    
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="rating" id="modalRating">
+                            <!-- Stars will be inserted here -->
+                        </div>
+                        <span class="text-gray-600" id="modalReviews"></span>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <p class="product-price" id="modalPrice"></p>
+                        <p class="text-green-600 font-semibold flex items-center gap-2 mt-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span id="modalSales"></span>
+                        </p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-3">Description</h3>
+                        <p class="text-gray-700 mb-4" id="modalDescription"></p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-3">Features</h3>
+                        <ul class="space-y-2" id="modalFeatures">
+                            <!-- Features will be inserted here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="#" id="whatsappBtn" target="_blank" class="action-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            <span>💬 Buy via WhatsApp</span>
+                        </a>
+                        
+                        <button onclick="showPayPalInfo()" class="action-btn paypal-btn w-full">
+                            <i class="fab fa-paypal text-2xl"></i>
+                            <span>💳 Buy via PayPal</span>
+                        </button>
+                        
+                        <a href="#" class="action-btn custom-btn custom-link-btn">
+                            <i class="fas fa-link"></i>
+                            <span>🔗 I Want This</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Wishlist Modal -->
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <button class="modal-close" onclick="closeWishlistModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="p-8">
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-heart text-red-500"></i> My Wishlist
+                </h2>
+                
+                <div id="wishlistContent" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Wishlist items will be inserted here -->
+                </div>
+                
+                <div id="emptyWishlist" class="text-center py-20" style="display: none;">
+                    <i class="fas fa-heart-broken text-gray-300 text-6xl mb-4"></i>
+                    <p class="text-2xl text-gray-500">Your wishlist is empty</p>
+                    <p class="text-gray-400 mt-2">Start adding products you love!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Dark Mode Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+        
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('themeIcon').textContent = '🌙';
+            }
+        });
+        
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Update Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Format date
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const dateStr = now.toLocaleDateString('en-US', options);
+            const dateElement = document.getElementById('currentDate');
+            if (dateElement) dateElement.textContent = dateStr;
+            
+            // Format time
+            const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const timeElement = document.getElementById('currentTime');
+            if (timeElement) timeElement.textContent = timeStr;
+        }
+        
+        // Fake Visitor Counter
+        function updateVisitorCount() {
+            // Generate random visitor count between 150-350
+            const baseCount = 150;
+            const randomAdd = Math.floor(Math.random() * 200);
+            const visitorCount = baseCount + randomAdd;
+            const visitorElement = document.getElementById('visitorCount');
+            if (visitorElement) visitorElement.textContent = visitorCount;
+        }
+        
+        // Scroll to Top Functionality
+        window.addEventListener('scroll', function() {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Wishlist Management
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        
+        function updateWishlistCount() {
+            const count = wishlist.length;
+            const countElement = document.getElementById('wishlistCount');
+            if (count > 0) {
+                countElement.textContent = count;
+                countElement.style.display = 'flex';
+            } else {
+                countElement.style.display = 'none';
+            }
+        }
+        
+        function saveWishlist() {
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistCount();
+        }
+        
+        function addToWishlist(productId) {
+            if (!wishlist.includes(productId)) {
+                wishlist.push(productId);
+                saveWishlist();
+                return true;
+            }
+            return false;
+        }
+        
+        function removeFromWishlist(productId) {
+            wishlist = wishlist.filter(id => id !== productId);
+            saveWishlist();
+            renderWishlist();
+        }
+        
+        function isInWishlist(productId) {
+            return wishlist.includes(productId);
+        }
+        
+        function openWishlist() {
+            renderWishlist();
+            document.getElementById('wishlistModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeWishlistModal() {
+            document.getElementById('wishlistModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function renderWishlist() {
+            const wishlistContent = document.getElementById('wishlistContent');
+            const emptyWishlist = document.getElementById('emptyWishlist');
+            
+            if (wishlist.length === 0) {
+                wishlistContent.innerHTML = '';
+                emptyWishlist.style.display = 'block';
+                return;
+            }
+            
+            emptyWishlist.style.display = 'none';
+            wishlistContent.innerHTML = '';
+            
+            wishlist.forEach(productId => {
+                const product = products.find(p => p.id === productId);
+                if (!product) return;
+                
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="relative">
+                        <img src="${product.images[0]}" alt="${product.title}" class="product-image" style="height: 200px;">
+                        <button onclick="removeFromWishlist(${product.id})" class="wishlist-btn active" title="Remove from wishlist">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-2">${product.title}</h3>
+                        <p class="text-gray-600 mb-3 text-sm">${product.description}</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xl font-bold text-indigo-600">$${product.price}</span>
+                            <div class="rating text-sm">
+                                ${generateStars(product.rating)}
+                            </div>
+                        </div>
+                        <button onclick="openQuickView(${product.id}); closeWishlistModal();" class="quick-view-btn">
+                            <i class="fas fa-eye"></i> View Product
+                        </button>
+                    </div>
+                `;
+                wishlistContent.appendChild(card);
+            });
+        }
+        
+        // Initialize wishlist count on page load
+        updateWishlistCount();
+        
+        // Search Products Function
+        function searchProducts(event) {
+            // Search on Enter key
+            if (event && event.key === 'Enter') {
+                performSearch();
+            }
+        }
+        
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput') || document.getElementById('searchInputMobile');
+            const searchInputMobile = document.getElementById('searchInputMobile');
+            const searchTerm = (searchInput.value || searchInputMobile.value).toLowerCase().trim();
+            
+            if (!searchTerm) {
+                // If empty, show all products
+                filteredProducts = [...products];
+                currentPage = 1;
+                renderProducts();
+                return;
+            }
+            
+            // Filter products
+            filteredProducts = products.filter(product => {
+                return product.title.toLowerCase().includes(searchTerm) ||
+                       product.description.toLowerCase().includes(searchTerm) ||
+                       product.fullDescription.toLowerCase().includes(searchTerm);
+            });
+            
+            currentPage = 1;
+            currentCategory = 'all';
+            
+            // Update category buttons
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('.category-filter-btn').classList.add('active');
+            
+            // Render filtered products
+            renderProducts(searchTerm);
+            
+            // Scroll to products section
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+        
+        // Sample Products Data
+        const products = [
+            {
+                id: 1,
+                title: "Premium Dashboard Template",
+                description: "Modern and clean admin dashboard with 50+ pages and components",
+                price: 49,
+                rating: 5,
+                reviews: 234,
+                sales: 450,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+                    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800"
+                ],
+                features: [
+                    "50+ Pre-built Pages",
+                    "Responsive Design",
+                    "Dark Mode Support",
+                    "Regular Updates",
+                    "Premium Support"
+                ],
+                fullDescription: "A comprehensive admin dashboard template built with modern technologies. Perfect for creating professional web applications with ease. Includes authentication, data tables, charts, and much more."
+            },
+            {
+                id: 2,
+                title: "E-commerce UI Kit",
+                description: "Complete e-commerce design system with 100+ components",
+                price: 79,
+                rating: 5,
+                reviews: 189,
+                sales: 320,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1557821552-17105176677c?w=800",
+                    "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800",
+                    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"
+                ],
+                features: [
+                    "100+ UI Components",
+                    "Product Pages",
+                    "Shopping Cart",
+                    "Checkout Process",
+                    "User Dashboard"
+                ],
+                fullDescription: "Everything you need to build a modern e-commerce platform. This UI kit includes all essential components from product listings to checkout flows. Fully customizable and production-ready."
+            },
+            {
+                id: 3,
+                title: "Creative Portfolio Theme",
+                description: "Stunning portfolio template for designers and developers",
+                price: 39,
+                rating: 4,
+                reviews: 156,
+                sales: 280,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
+                    "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800",
+                    "https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=800"
+                ],
+                features: [
+                    "Portfolio Showcase",
+                    "Project Case Studies",
+                    "Blog Integration",
+                    "Contact Forms",
+                    "SEO Optimized"
+                ],
+                fullDescription: "Showcase your work in style with this creative portfolio theme. Features smooth animations, modern layouts, and everything you need to impress potential clients."
+            },
+            {
+                id: 4,
+                title: "SaaS Landing Page",
+                description: "Convert visitors into customers with this high-performing template",
+                price: 29,
+                rating: 5,
+                reviews: 298,
+                sales: 520,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800",
+                    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800",
+                    "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800"
+                ],
+                features: [
+                    "High Conversion Design",
+                    "Pricing Tables",
+                    "Testimonials",
+                    "Feature Sections",
+                    "CTA Buttons"
+                ],
+                fullDescription: "Designed to convert, this SaaS landing page template includes all the elements you need to showcase your product and turn visitors into paying customers."
+            },
+            {
+                id: 5,
+                title: "Mobile App UI Kit",
+                description: "iOS & Android design system with 200+ screens",
+                price: 89,
+                rating: 5,
+                reviews: 167,
+                sales: 195,
+                category: 'products',
+                images: [
+                    "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
+                    "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=800",
+                    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800"
+                ],
+                features: [
+                    "200+ Mobile Screens",
+                    "iOS & Android",
+                    "Figma & Sketch Files",
+                    "Design System",
+                    "Icon Library"
+                ],
+                fullDescription: "Complete mobile app design system with hundreds of pre-designed screens. Perfect for quickly prototyping and building your next mobile application."
+            },
+            {
+                id: 6,
+                title: "Restaurant Website Template",
+                description: "Delicious design for restaurants, cafes, and food businesses",
+                price: 35,
+                rating: 4,
+                reviews: 142,
+                sales: 230,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
+                    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+                    "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800"
+                ],
+                features: [
+                    "Menu Management",
+                    "Online Reservations",
+                    "Gallery Sections",
+                    "Location Maps",
+                    "Mobile Responsive"
+                ],
+                fullDescription: "A mouth-watering website template designed specifically for restaurants and food businesses. Includes menu displays, reservation systems, and beautiful galleries."
+            },
+            {
+                id: 7,
+                title: "Corporate Business Theme",
+                description: "Professional website for corporate and business services",
+                price: 45,
+                rating: 5,
+                reviews: 201,
+                sales: 385,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+                    "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+                    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800"
+                ],
+                features: [
+                    "Multiple Page Layouts",
+                    "Team Sections",
+                    "Service Pages",
+                    "Blog System",
+                    "Contact Forms"
+                ],
+                fullDescription: "A professional corporate theme that helps establish credibility and trust. Perfect for consulting firms, agencies, and corporate businesses."
+            },
+            {
+                id: 8,
+                title: "Fitness & Gym Template",
+                description: "Energetic design for fitness centers and personal trainers",
+                price: 32,
+                rating: 4,
+                reviews: 128,
+                sales: 175,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+                    "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800",
+                    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"
+                ],
+                features: [
+                    "Class Schedules",
+                    "Trainer Profiles",
+                    "Membership Plans",
+                    "BMI Calculator",
+                    "Video Integration"
+                ],
+                fullDescription: "Get your fitness business online with this energetic and motivating template. Includes everything from class schedules to membership management."
+            },
+            {
+                id: 9,
+                title: "Photography Portfolio",
+                description: "Showcase your photography with this stunning gallery template",
+                price: 42,
+                rating: 5,
+                reviews: 176,
+                sales: 265,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800",
+                    "https://images.unsplash.com/photo-1554080353-a576cf803bda?w=800",
+                    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+                ],
+                features: [
+                    "Fullscreen Galleries",
+                    "Lightbox Effects",
+                    "Portfolio Filters",
+                    "Client Proofing",
+                    "Print Shop"
+                ],
+                fullDescription: "A beautiful portfolio template designed specifically for photographers. Features stunning galleries, lightbox effects, and client proofing capabilities."
+            },
+            {
+                id: 10,
+                title: "Education LMS Platform",
+                description: "Complete learning management system for online courses",
+                price: 99,
+                rating: 5,
+                reviews: 243,
+                sales: 310,
+                category: 'scripts',
+                images: [
+                    "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800",
+                    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
+                    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800"
+                ],
+                features: [
+                    "Course Management",
+                    "Student Dashboard",
+                    "Quiz System",
+                    "Certificates",
+                    "Payment Integration"
+                ],
+                fullDescription: "Build your own online learning platform with this comprehensive LMS template. Includes course management, student tracking, quizzes, and more."
+            },
+            {
+                id: 11,
+                title: "Real Estate Listing Theme",
+                description: "Modern property listing and real estate website",
+                price: 55,
+                rating: 4,
+                reviews: 134,
+                sales: 198,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
+                    "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800",
+                    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800"
+                ],
+                features: [
+                    "Property Listings",
+                    "Advanced Search",
+                    "Map Integration",
+                    "Agent Profiles",
+                    "Virtual Tours"
+                ],
+                fullDescription: "Everything you need to create a professional real estate website. Features property listings, advanced search filters, and map integration."
+            },
+            {
+                id: 12,
+                title: "Blog & Magazine Template",
+                description: "Content-rich design for blogs and online magazines",
+                price: 27,
+                rating: 5,
+                reviews: 289,
+                sales: 475,
+                category: 'templates',
+                images: [
+                    "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800",
+                    "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800",
+                    "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"
+                ],
+                features: [
+                    "Multiple Layouts",
+                    "Author Pages",
+                    "Category System",
+                    "Social Sharing",
+                    "Newsletter"
+                ],
+                fullDescription: "A beautiful template for bloggers and content creators. Features multiple layout options, social sharing, and everything you need to grow your audience."
+            },
+            {
+                id: 13,
+                title: "JavaScript Mastery Ebook",
+                description: "Complete guide to modern JavaScript with real-world examples",
+                price: 19,
+                rating: 5,
+                reviews: 512,
+                sales: 890,
+                category: 'ebooks',
+                images: [
+                    "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800",
+                    "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800",
+                    "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800"
+                ],
+                features: [
+                    "500+ Pages of Content",
+                    "Real-world Examples",
+                    "ES6+ Coverage",
+                    "Project-based Learning",
+                    "Free Updates"
+                ],
+                fullDescription: "Master modern JavaScript with this comprehensive guide. From basics to advanced concepts, with hands-on projects and real-world applications."
+            },
+            {
+                id: 14,
+                title: "Web Development Automation Script",
+                description: "Automate your workflow with this powerful build script",
+                price: 15,
+                rating: 4,
+                reviews: 87,
+                sales: 145,
+                category: 'scripts',
+                images: [
+                    "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+                    "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800",
+                    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800"
+                ],
+                features: [
+                    "Automated Build Process",
+                    "Code Minification",
+                    "Image Optimization",
+                    "Easy Configuration",
+                    "Cross-platform Support"
+                ],
+                fullDescription: "Streamline your development workflow with this automation script. Handles building, minification, optimization, and deployment."
+            },
+            {
+                id: 15,
+                title: "Digital Marketing Ebook Bundle",
+                description: "3-in-1 ebook bundle covering SEO, Social Media, and Email Marketing",
+                price: 35,
+                rating: 5,
+                reviews: 423,
+                sales: 678,
+                category: 'ebooks',
+                images: [
+                    "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800",
+                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                ],
+                features: [
+                    "3 Complete Ebooks",
+                    "SEO Best Practices",
+                    "Social Media Strategies",
+                    "Email Marketing Guide",
+                    "Bonus Templates"
+                ],
+                fullDescription: "Everything you need to master digital marketing. This bundle includes three comprehensive ebooks covering all essential aspects of online marketing."
+            },
+            {
+                id: 16,
+                title: "Premium Icon Pack",
+                description: "1000+ vector icons for web and mobile design",
+                price: 25,
+                rating: 5,
+                reviews: 234,
+                sales: 456,
+                category: 'products',
+                images: [
+                    "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800",
+                    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                ],
+                features: [
+                    "1000+ Unique Icons",
+                    "Multiple Formats (SVG, PNG)",
+                    "Fully Customizable",
+                    "Regular Updates",
+                    "Commercial License"
+                ],
+                fullDescription: "A comprehensive icon pack with over 1000 professionally designed icons. Perfect for web, mobile, and desktop applications."
+            },
+            {
+                id: 17,
+                title: "Python Automation Script Collection",
+                description: "50+ ready-to-use Python automation scripts",
+                price: 45,
+                rating: 5,
+                reviews: 156,
+                sales: 287,
+                category: 'scripts',
+                images: [
+                    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800",
+                    "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800"
+                ],
+                features: [
+                    "50+ Python Scripts",
+                    "Web Scraping Tools",
+                    "Data Processing",
+                    "File Management",
+                    "Well Documented"
+                ],
+                fullDescription: "Save time with this collection of Python automation scripts. Includes web scraping, data processing, file management, and more."
+            },
+            {
+                id: 18,
+                title: "UI/UX Design Principles Ebook",
+                description: "Learn professional UI/UX design from scratch",
+                price: 22,
+                rating: 5,
+                reviews: 389,
+                sales: 723,
+                category: 'ebooks',
+                images: [
+                    "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+                    "https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?w=800",
+                    "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800"
+                ],
+                features: [
+                    "300+ Pages",
+                    "Case Studies",
+                    "Design Patterns",
+                    "Practical Examples",
+                    "Industry Insights"
+                ],
+                fullDescription: "Master UI/UX design with this comprehensive ebook. Learn from real-world case studies and practical examples from industry experts."
+            },
+            {
+                id: 19,
+                title: "Stock Photo Bundle",
+                description: "500 high-resolution stock photos for commercial use",
+                price: 39,
+                rating: 4,
+                reviews: 198,
+                sales: 345,
+                category: 'products',
+                images: [
+                    "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800",
+                    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800",
+                    "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=800"
+                ],
+                features: [
+                    "500 HD Photos",
+                    "Commercial License",
+                    "Multiple Categories",
+                    "High Resolution",
+                    "Instant Download"
+                ],
+                fullDescription: "Premium stock photos for your projects. Includes 500 high-resolution images across various categories with full commercial license."
+            },
+            {
+                id: 20,
+                title: "WordPress Security Plugin",
+                description: "Advanced security plugin to protect your WordPress site",
+                price: 29,
+                rating: 5,
+                reviews: 267,
+                sales: 512,
+                category: 'scripts',
+                images: [
+                    "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800",
+                    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+                    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800"
+                ],
+                features: [
+                    "Malware Scanning",
+                    "Firewall Protection",
+                    "Login Security",
+                    "Real-time Monitoring",
+                    "1-Year Support"
+                ],
+                fullDescription: "Protect your WordPress site with advanced security features. Includes malware scanning, firewall, login protection, and real-time monitoring."
+            }
+        ];
+        
+        // Current selected category
+        let currentCategory = 'all';
+        let currentPage = 1;
+        const itemsPerPage = 8;
+        let filteredProducts = [...products];
+        
+        // Hero Search Functions
+        function heroSearch(event) {
+            if (event && event.key === 'Enter') {
+                performHeroSearch();
+            }
+        }
+        
+        function performHeroSearch() {
+            const searchInput = document.getElementById('heroSearchInput');
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                filteredProducts = [...products];
+                currentPage = 1;
+                renderProducts();
+                return;
+            }
+            
+            // Filter products
+            filteredProducts = products.filter(product => {
+                return product.title.toLowerCase().includes(searchTerm) ||
+                       product.description.toLowerCase().includes(searchTerm) ||
+                       product.fullDescription.toLowerCase().includes(searchTerm) ||
+                       product.category.toLowerCase().includes(searchTerm);
+            });
+            
+            currentPage = 1;
+            currentCategory = 'all';
+            
+            // Update category buttons
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('.category-filter-btn').classList.add('active');
+            
+            renderProducts(searchTerm);
+            
+            // Scroll to products section
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Filter products by category
+        function filterByCategory(category) {
+            currentCategory = category;
+            currentPage = 1;
+            
+            // Update active button
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Filter products
+            if (category === 'all') {
+                filteredProducts = [...products];
+            } else {
+                filteredProducts = products.filter(p => p.category === category);
+            }
+            
+            renderProducts();
+        }
+        
+        // Pagination Functions
+        function getTotalPages() {
+            return Math.ceil(filteredProducts.length / itemsPerPage);
+        }
+        
+        function changePage(page) {
+            const totalPages = getTotalPages();
+            if (page < 1 || page > totalPages) return;
+            
+            currentPage = page;
+            renderProducts();
+            
+            // Scroll to products section
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        function renderPagination() {
+            const totalPages = getTotalPages();
+            const paginationContainer = document.getElementById('pagination');
+            paginationContainer.innerHTML = '';
+            
+            if (totalPages <= 1) {
+                paginationContainer.style.display = 'none';
+                return;
+            }
+            
+            paginationContainer.style.display = 'flex';
+            
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-btn';
+            prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => changePage(currentPage - 1);
+            paginationContainer.appendChild(prevBtn);
+            
+            // Page numbers
+            const maxButtons = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+            let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+            
+            if (endPage - startPage < maxButtons - 1) {
+                startPage = Math.max(1, endPage - maxButtons + 1);
+            }
+            
+            // First page
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'pagination-btn';
+                firstBtn.textContent = '1';
+                firstBtn.onclick = () => changePage(1);
+                paginationContainer.appendChild(firstBtn);
+                
+                if (startPage > 2) {
+                    const dots = document.createElement('span');
+                    dots.className = 'pagination-info';
+                    dots.textContent = '...';
+                    paginationContainer.appendChild(dots);
+                }
+            }
+            
+            // Page buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => changePage(i);
+                paginationContainer.appendChild(pageBtn);
+            }
+            
+            // Last page
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const dots = document.createElement('span');
+                    dots.className = 'pagination-info';
+                    dots.textContent = '...';
+                    paginationContainer.appendChild(dots);
+                }
+                
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'pagination-btn';
+                lastBtn.textContent = totalPages;
+                lastBtn.onclick = () => changePage(totalPages);
+                paginationContainer.appendChild(lastBtn);
+            }
+            
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-btn';
+            nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => changePage(currentPage + 1);
+            paginationContainer.appendChild(nextBtn);
+            
+            // Info
+            const info = document.createElement('span');
+            info.className = 'pagination-info';
+            const start = (currentPage - 1) * itemsPerPage + 1;
+            const end = Math.min(currentPage * itemsPerPage, filteredProducts.length);
+            info.textContent = `${start}-${end} of ${filteredProducts.length}`;
+            paginationContainer.appendChild(info);
+        }
+        
+        // Render Products
+        function renderProducts(searchTerm = '') {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = ''; // Clear existing products
+            
+            // Calculate pagination
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const productsToShow = filteredProducts.slice(startIndex, endIndex);
+            
+            if (productsToShow.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center py-20"><p class="text-2xl text-gray-500">No products found.</p></div>';
+                renderPagination();
+                return;
+            }
+            
+            productsToShow.forEach((product, index) => {
+                // Highlight search term in title and description
+                let title = product.title;
+                let description = product.description;
+                
+                if (searchTerm) {
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    title = title.replace(regex, '<span class="search-highlight">$1</span>');
+                    description = description.replace(regex, '<span class="search-highlight">$1</span>');
+                }
+                
+                // Check if product is in wishlist
+                const isWishlisted = isInWishlist(product.id);
+                const heartIcon = isWishlisted ? 'fas' : 'far';
+                const activeClass = isWishlisted ? 'active' : '';
+                
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index % 4) * 100);
+                card.setAttribute('data-product-id', product.id);
+                
+                card.innerHTML = `
+                    <div class="relative">
+                        <img src="${product.images[0]}" alt="${product.title}" class="product-image">
+                        <div class="wishlist-btn ${activeClass}" onclick="toggleWishlist(this)">
+                            <i class="${heartIcon} fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">${title}</h3>
+                        <p class="text-gray-600 mb-4 text-sm">${description}</p>
+                        
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="rating">
+                                ${generateStars(product.rating)}
+                            </div>
+                            <span class="text-sm text-gray-600">(${product.reviews})</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-indigo-600">$${product.price}</span>
+                            <span class="text-sm text-gray-600"><i class="fas fa-shopping-bag"></i> ${product.sales}+ sales</span>
+                        </div>
+                        
+                        <button onclick="openQuickView(${product.id})" class="quick-view-btn">
+                            <i class="fas fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+            
+            // Render pagination
+            renderPagination();
+        }
+        
+        // Generate Stars
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '<i class="fas fa-star"></i>';
+                } else {
+                    stars += '<i class="far fa-star"></i>';
+                }
+            }
+            return stars;
+        }
+        
+        // Toggle Wishlist
+        function toggleWishlist(btn) {
+            const card = btn.closest('.product-card');
+            const productId = parseInt(card.getAttribute('data-product-id'));
+            const icon = btn.querySelector('i');
+            
+            if (isInWishlist(productId)) {
+                removeFromWishlist(productId);
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                btn.classList.remove('active');
+            } else {
+                addToWishlist(productId);
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.classList.add('active');
+            }
+        }
+        
+        // Open Quick View Modal
+        function openQuickView(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            // Update modal content
+            document.getElementById('modalTitle').textContent = product.title;
+            document.getElementById('modalPrice').textContent = '$' + product.price;
+            document.getElementById('modalRating').innerHTML = generateStars(product.rating);
+            document.getElementById('modalReviews').textContent = `(${product.reviews} reviews)`;
+            document.getElementById('modalSales').textContent = `${product.sales}+ Sales`;
+            document.getElementById('modalDescription').textContent = product.fullDescription;
+            
+            // Update features
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center gap-2 text-gray-700';
+                li.innerHTML = `<i class="fas fa-check text-green-500"></i> ${feature}`;
+                featuresList.appendChild(li);
+            });
+            
+            // Update images
+            const imagesContainer = document.getElementById('modalImages');
+            imagesContainer.innerHTML = '';
+            product.images.forEach(image => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `<img src="${image}" alt="${product.title}">`;
+                imagesContainer.appendChild(slide);
+            });
+            
+            // Update WhatsApp button with full product info
+            const whatsappMessage = `Hi, I'm interested in purchasing this product:
 
-    <script src="app.js"></script>
+📦 Product: ${product.title}
+💰 Price: $${product.price}
+⭐ Rating: ${product.rating}/5 (${product.reviews} reviews)
+🛒 Sales: ${product.sales}+ sales
+
+${product.fullDescription}
+
+Please provide more details about purchasing this product.`;
+            
+            const whatsappText = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/212723242286?text=${whatsappText}`;
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            whatsappBtn.href = whatsappUrl;
+            
+            // Show modal
+            document.getElementById('quickViewModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Initialize/Update Swiper
+            setTimeout(() => {
+                if (window.productSwiper) {
+                    window.productSwiper.destroy();
+                }
+                window.productSwiper = new Swiper('.productSwiper', {
+                    loop: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }, 100);
+        }
+        
+        // Close Modal
+        function closeModal() {
+            document.getElementById('quickViewModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('quickViewModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            
+            document.getElementById('wishlistModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeWishlistModal();
+                }
+            });
+        });
+        
+        // Show PayPal Info
+        function showPayPalInfo() {
+            alert('Please send payment to: bankmarouan@gmail.com via PayPal\n\nAfter payment, send screenshot of transaction to confirm your order.');
+        }
+        
+        // Initialize products on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            updateWishlistCount();
+            
+            // Start date/time updates
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+            
+            // Start visitor count updates
+            updateVisitorCount();
+            setInterval(updateVisitorCount, 10000);
+            
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    // Only apply smooth scroll to internal page links, not external links or buttons
+                    if (href && href.startsWith('#') && href.length > 1) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
